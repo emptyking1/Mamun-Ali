@@ -1,0 +1,393 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mamun Ali - Web Developer Portfolio. Explore my skills, work and web development projects.">
+    <meta name="theme-color" content="#0b0d12">
+
+    <title>Mamun Ali | Web Developer</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0b0d12;
+            color: #f5f5f5;
+            line-height: 1.7;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(11, 13, 18, 0.95);
+            border-bottom: 1px solid #252938;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #a78bfa;
+        }
+
+        nav {
+            display: flex;
+            gap: 22px;
+        }
+
+        nav a {
+            color: #d1d5db;
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #a78bfa;
+        }
+
+        .hero {
+            min-height: 85vh;
+            padding: 80px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background:
+                radial-gradient(
+                    circle at 50% 30%,
+                    rgba(124, 92, 220, 0.15),
+                    transparent 55%
+                );
+        }
+
+        .eyebrow {
+            color: #a78bfa;
+            font-size: 13px;
+            letter-spacing: 3px;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: clamp(38px, 7vw, 72px);
+            line-height: 1.2;
+            margin: 20px 0;
+        }
+
+        h1 span {
+            background: linear-gradient(
+                90deg,
+                #a78bfa,
+                #67e8f9
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero h2 {
+            font-size: clamp(20px, 3vw, 28px);
+            margin-bottom: 18px;
+        }
+
+        .description {
+            max-width: 620px;
+            color: #a5adbd;
+            font-size: 17px;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 13px 25px;
+            background: linear-gradient(
+                110deg,
+                #a78bfa,
+                #67c8f9
+            );
+            color: #10111b;
+            border-radius: 8px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+        }
+
+        .section {
+            padding: 80px 8%;
+            text-align: center;
+            scroll-margin-top: 75px;
+        }
+
+        .section:nth-of-type(even) {
+            background: #11141d;
+        }
+
+        .section h2 {
+            font-size: 34px;
+            margin-bottom: 20px;
+        }
+
+        .section h2 span {
+            color: #a78bfa;
+        }
+
+        .section p {
+            max-width: 720px;
+            margin: 0 auto;
+            color: #a5adbd;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 14px;
+            margin: 30px auto 0;
+            max-width: 800px;
+        }
+
+        .skill {
+            padding: 12px 20px;
+            border: 1px solid #303547;
+            background: #171b27;
+            color: #d8d5f8;
+            border-radius: 10px;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .project-card {
+            background: #171b27;
+            border: 1px solid #303547;
+            border-radius: 14px;
+            padding: 25px 20px;
+            text-align: left;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: #a78bfa;
+        }
+
+        .project-card h3 {
+            margin-bottom: 10px;
+            color: #f5f5f5;
+        }
+
+        .project-card p {
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .project-number {
+            color: #a78bfa;
+            font-size: 13px;
+            margin-bottom: 12px;
+            letter-spacing: 2px;
+        }
+
+        .contact-email {
+            display: inline-block;
+            margin-top: 25px;
+            color: #a78bfa;
+            text-decoration: none;
+            overflow-wrap: anywhere;
+        }
+
+        footer {
+            padding: 25px 15px;
+            text-align: center;
+            color: #a5adbd;
+            font-size: 14px;
+            border-top: 1px solid #252938;
+        }
+
+        @media (max-width: 750px) {
+            header {
+                padding: 16px 5%;
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+
+            nav {
+                gap: 14px;
+                flex-wrap: wrap;
+            }
+
+            nav a {
+                font-size: 13px;
+            }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 65px 6%;
+            }
+
+            .hero {
+                min-height: 75vh;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">MA.</div>
+
+        <nav aria-label="Main navigation">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <p class="eyebrow">WELCOME TO MY PORTFOLIO</p>
+
+            <h1>Hi, I'm <span>Mamun Ali.</span></h1>
+
+            <h2>Web Developer</h2>
+
+            <p class="description">
+                I build modern, responsive websites and practical
+                digital experiences using HTML, CSS, JavaScript
+                and Bubble.io.
+            </p>
+
+            <a class="button" href="#projects">
+                Explore My Work ↗
+            </a>
+        </section>
+
+        <section class="section" id="about">
+            <h2>About <span>Me</span></h2>
+
+            <p>
+                I'm Mamun Ali, a web developer interested in building
+                clean, useful and user-friendly websites. I enjoy
+                turning ideas into practical digital experiences
+                with modern web technologies.
+            </p>
+        </section>
+
+        <section class="section" id="skills">
+            <h2>My <span>Skills</span></h2>
+
+            <p>
+                Technologies and tools I use to build websites
+                and web applications.
+            </p>
+
+            <div class="skills">
+                <div class="skill">HTML5</div>
+                <div class="skill">CSS3</div>
+                <div class="skill">JavaScript</div>
+                <div class="skill">Bubble.io</div>
+                <div class="skill">Responsive Design</div>
+                <div class="skill">Web Development</div>
+            </div>
+        </section>
+
+        <section class="section" id="projects">
+            <h2>My <span>Projects</span></h2>
+
+            <p>
+                Here are some project concepts that can be replaced
+                with my actual work.
+            </p>
+
+            <div class="projects">
+
+                <article class="project-card">
+                    <div class="project-number">PROJECT 01</div>
+                    <h3>Business Website</h3>
+                    <p>
+                        A modern and responsive website concept
+                        for presenting a business online.
+                    </p>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-number">PROJECT 02</div>
+                    <h3>Portfolio Website</h3>
+                    <p>
+                        A personal portfolio showcasing skills,
+                        experience and selected work.
+                    </p>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-number">PROJECT 03</div>
+                    <h3>Web Application</h3>
+                    <p>
+                        A web application concept designed to
+                        organize information and simplify workflows.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="section" id="contact">
+            <h2>Let's Work <span>Together</span></h2>
+
+            <p>
+                Have a website idea or project in mind?
+                Feel free to contact me by email.
+            </p>
+
+            <!-- Replace with your actual email address -->
+            <a
+                class="contact-email"
+                href="mailto:your.email@example.com"
+            >
+                your.email@example.com
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        © <span id="year">2026</span> Mamun Ali.
+        All rights reserved.
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+    </script>
+
+</body>
+</html>
